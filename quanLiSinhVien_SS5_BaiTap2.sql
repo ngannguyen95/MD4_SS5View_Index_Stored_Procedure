@@ -69,7 +69,7 @@ update subjects
 set subjectName= concat("Đây là môn học", subjectName);
 -- 	Viet Check Constraint de kiem tra do tuoi nhap vao trong bang Student yeu cau Age >15 va Age < 50
 alter table students
-modify age int check (15< age<50) ;
+modify age int check (15<age and age<50) ;
 --  Loai bo tat ca quan he giua cac bang
 alter table classStudent drop constraint classstudent_ibfk_1;
 alter table classStudent drop constraint classstudent_ibfk_2;
@@ -83,3 +83,8 @@ add column status bit default 1;
 -- 	Cap nhap gia tri Status trong bang Student thanh 0
 update students
 set status=0;
+insert into students(studentName,age,email) values
+("Nguyễn Trần ",14,"an@yahoo.com");
+
+
+
